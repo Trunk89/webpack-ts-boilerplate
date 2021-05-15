@@ -3,20 +3,20 @@
   "version": "1.0.0",
   "description": "Webpack TypeScript boilerplate",
   "main": "src/index.ts",
+  "repository": "https://github.com/Trunk89/webpack-ts-boilerplate.git",
   "scripts": {
-    "test": "karma start --single-run --browsers ChromeHeadless",
-    "test:dev": "karma start --browsers ChromeHeadless",
+    "test": "jest --watch",
+    "test:prod": "jest --ci --runInBand --silent --colors --coverage",
     "start": "webpack-dev-server --mode=development",
     "build": "webpack --mode=production"
   },
   "author": "Kamil Kolodynski",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "@babel/core": "7.8.7",
     "@babel/preset-env": "7.8.7",
-    "@types/jasmine": "^3.5.8",
     "babel-loader": "8.0.6",
-    "css-loader": "^5.2.4",
+    "css-loader": "5.2.4",
     "html-webpack-plugin": "3.2.0",
     "mini-css-extract-plugin": "0.9.0",
     "sass": "1.26.2",
@@ -27,6 +27,9 @@
     "webpack": "4.42.0",
     "webpack-cli": "3.3.11",
     "webpack-dev-server": "3.11.0",
-    "webpack-karma-jasmine": "4.0.0"
+    "@jest/types": "26.6.2",
+    "jest": "26.6.3",
+    "@types/jest": "26.0.23",
+    "ts-jest": "26.5.6"
   }
 }

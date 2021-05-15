@@ -11,6 +11,10 @@ export class Example {
         this.init();
     }
 
+    get MESSAGE():string {
+        return this._MESSAGE;
+    }
+
     private init() {
         this.appendMessage();
     }
