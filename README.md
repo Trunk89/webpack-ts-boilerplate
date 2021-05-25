@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.com/Trunk89/webpack-ts-boilerplate.svg?branch=master)](https://travis-ci.com/Trunk89/webpack-ts-boilerplate)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/19b8a10d2c664ec3ae18672a05c91ce3)](https://www.codacy.com/gh/Trunk89/webpack-ts-boilerplate/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Trunk89/webpack-ts-boilerplate&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/19b8a10d2c664ec3ae18672a05c91ce3)](https://www.codacy.com/gh/Trunk89/webpack-ts-boilerplate/dashboard?utm_source=github.com&utm_medium=referral&utm_content=Trunk89/webpack-ts-boilerplate&utm_campaign=Badge_Coverage)
 
 ## Dev environment
 
