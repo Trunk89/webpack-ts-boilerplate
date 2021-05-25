@@ -1,11 +1,25 @@
+/* eslint @typescript-eslint/no-var-requires: "off" */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
 
 module.exports = {
     entry: './src/index.ts',
     module: {
         rules: [
+            {
+                test: /\.(ts|tsx)$/,
+                enforce: 'pre',
+                use: [
+                {
+                    options: {
+                        eslintPath: require.resolve('eslint'),
+            
+                    },
+                    loader: require.resolve('eslint-loader'),
+                },
+            ],
+            exclude: /node_modules/,
+            },
             {
                 test: /\.ts(x)?$/,
                 loader: 'ts-loader',

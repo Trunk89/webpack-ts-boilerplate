@@ -12,11 +12,11 @@ describe("Example Component", () => {
 
     describe("When Example Component is loaded with specified message", () => {
         beforeEach(() => {
-            let elem = document.createElement('div');
+            const elem = document.createElement('div');
             elem.innerHTML = fixture;
             element = elem.querySelector('.example');
             document.body.append(element);
-            component = new Example({}, element);
+            component = new Example({ selector: 'test' }, element);
         });
 
         test("Then MESSAGE is defined as custom message", () => {
@@ -30,11 +30,11 @@ describe("Example Component", () => {
 
     describe("When Example Component is loaded without specified message", () => {
         beforeEach(() => {
-            let elem = document.createElement('div');
+            const elem = document.createElement('div');
             elem.innerHTML = fixtureEmpty;
             element = elem.querySelector('.example');
             document.body.append(element);
-            component = new Example({}, element);
+            component = new Example({ selector: 'test' }, element);
         });
 
         test("Then MESSAGE is set to default text Message not set", () => {

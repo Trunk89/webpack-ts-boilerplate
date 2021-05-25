@@ -1,13 +1,14 @@
-export class Example {
+import { ComponentProps } from "../interfaces/component.props.interface";
+import { BaseComponent } from "./base.component";
 
+export class Example extends BaseComponent {
     private _MESSAGE: string;
-    private _container: HTMLElement;
-    private _props: any;
 
-    constructor(props: any, container: HTMLElement) {
+    constructor(props: ComponentProps, container: HTMLElement) {
+        super(props, container);
+
         this._MESSAGE = container.dataset.message || 'Message not set';
-        this._container = container;
-        this._props = props;
+
         this.init();
     }
 
@@ -20,6 +21,6 @@ export class Example {
     }
 
     private appendMessage() {
-        this._container.append(this._MESSAGE);
+        this.container.append(this._MESSAGE);
     }
 }

@@ -5,4 +5,4 @@ export const COMPONENTS_CONFIG = [
             selector: ".example"
         }
     }
-]
+];

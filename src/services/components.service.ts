@@ -1,36 +1,30 @@
-import { ComponentInterface } from '../interfaces/component.interface';
+import { BaseComponent } from '../components/base.component';
+import { InitialisedComponents } from '../interfaces/initialised-components.interface copy';
 
-let instances = [];
-let initialisedComponents = {};
+const initialisedComponents: InitialisedComponents[] = [];
 
 export class ComponentService {
-    static addComponent<ComponentInterface>(instance: ComponentInterface) {
-        instances.push(instance);
+    static addInitialisedComponent(componentType: string, element: HTMLElement, instance: BaseComponent): void {
+        const componentInstance = this.getInitialisedComponent(componentType);
+        if (componentInstance) {
+            componentInstance.instances.push({ element, instance });
+        } else {
+            initialisedComponents.push({
+                type: componentType,
+                instances: [{ element, instance }]
+            });
+        }
     }
 
-    static returnAllActiveComponents(): ComponentInterface[] {
-        return instances;
+    static getInitialisedComponent(componentType: string): InitialisedComponents {
+        return initialisedComponents.find(comp => comp.type === componentType);
     }
 
-    static returnComponent<ComponentInterface>(instance: any): ComponentInterface {
-        return instances.find((element) => {
-            return element instanceof instance;
-        });
-    }
-
-    static deleteInitialisedComponents() {
-        initialisedComponents = {};
-    }
-
-    static addInitialisedComponent(component: string, element: Element) {
-        initialisedComponents[component].push(element)
-    }
-
-    static getInitialisedComponent(component: string) {
-        return initialisedComponents[component];
-    }
-
-    static removeInitialisedComponents(component: string) {
-        initialisedComponents[component] = [];
+    static removeInitialisedComponents(componentType: string): void {
+        const componentInstance = this.getInitialisedComponent(componentType);
+        const componentIndex = initialisedComponents.indexOf(componentInstance);
+        if (componentIndex > -1) {
+            initialisedComponents.splice(componentIndex, 1);
+        }
     }
 }

@@ -1,6 +1,7 @@
 # WEBPACK TYPESCIPT BOILERPLATE
+https://travis-ci.com/Trunk89/webpack-ts-boilerplate.svg?branch=master
 
-## DEV ENVIRONMENT
+## Dev environment
 
 #### `npm start`
 
@@ -12,7 +13,7 @@ Start unit test
 
 
 
-## CREATING PROD BUNDLE
+## Creating prod bundle
 
 #### `npm run build`
 
