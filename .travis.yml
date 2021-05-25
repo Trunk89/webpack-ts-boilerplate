@@ -11,3 +11,5 @@ install:
 script:
   - npm run build
   - npm run test:prod
+after_script:
+  - bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r coverage/clover.xml
